@@ -1,0 +1,8 @@
+@import '../../utils/globals.scss';
+
+// .page {}
+
+.section {
+  max-width: #{$mainClamp}px;
+  margin: auto;
+}
