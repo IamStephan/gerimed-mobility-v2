@@ -1,15 +1,20 @@
 import React, { PureComponent } from 'react';
+import Image from 'react-image';
 import { Button } from '@material-ui/core';
 
 import { Section } from '../../components/page/page';
 
+import globals from '../../utils/globals.scss';
 import styles from './hero.module.scss';
 
 export default class Hero extends PureComponent {
   render() {
     return (
       <div className={styles['hero']}>
-        <img alt='Hero' src={require('../../static/production/hero_cropped_1.jpg')} className={styles['img']} />
+        <Image
+          alt='Hero'
+          src={require('../../static/production/hero_cropped_1.jpg')}
+          className={styles['img']} />
         
         <Section>
           <div className={styles['hero-content']}>
