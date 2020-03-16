@@ -1,0 +1,77 @@
+@import '../../utils/globals.scss';
+
+$navbarHeight: 120;
+$navbarHeightMultiplier: 0.6;
+
+$breakpointOne: 900;
+$breakpointTwo: 500;
+
+.navbar-container {
+  padding: #{$padding / 2}px;
+  background-color: $dark;
+  position: sticky;
+  top: 0px;
+  height: #{$navbarHeight}px;
+  width: 100%;
+  z-index: 999;
+  transition: background-color 200ms ease-in-out, height 200ms ease-in-out;
+
+  &.homepage {
+    background-color: transparent;
+
+    &.scrolled {
+      background-color: $dark;
+      height: #{$navbarHeight * $navbarHeightMultiplier}px;
+    }
+  }
+
+  &.scrolled {
+    height: #{$navbarHeight * $navbarHeightMultiplier}px;
+  }
+
+  .navbar {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    position: relative;
+    max-width: #{$mainClamp}px;
+    margin: auto;
+    max-height: 100%;
+
+    .btn {
+      margin-right: #{$margin}px;
+
+      &:last-child {
+        margin-right: 0px;
+      }
+    }
+
+    .logo {
+      max-height: 100%;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .logo-small {
+      max-height: 100%;
+      width: auto;
+      max-width: 125px;
+      object-fit: contain;
+    }
+    
+    .navbar-routes {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-actions {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+:export {
+  breakpointOne: $breakpointOne;
+  breakpointTwo: $breakpointTwo;
+}

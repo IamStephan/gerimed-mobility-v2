@@ -1,0 +1,58 @@
+@import '../../utils/globals.scss';
+
+$breakpointOne: 800;
+$breakpointTwo: 450;
+
+
+.suppliers {
+  margin-bottom: #{$sectionSeperator}px;
+  padding: #{$padding}px;
+
+  .title {
+    @include Title;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .supps {
+    display: flex;
+
+    .supps-item {
+      flex: 1;
+      height: 75px;
+      position: relative;
+      margin: #{$margin * 2}px;
+
+      .supps-img {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+@media (max-width: #{$breakpointOne}px) {
+  .suppliers {
+    .supps {
+      flex-wrap: wrap;  
+      .supps-item {
+        min-width: calc(50% - #{$margin * 4}px);
+      }
+    }
+  }
+}
+
+@media (max-width: #{$breakpointTwo}px) {
+  .suppliers {
+    .supps {
+      flex-wrap: wrap;  
+      .supps-item {
+        min-width: calc(100% - #{$margin * 4}px);
+      }
+    }
+  }
+}

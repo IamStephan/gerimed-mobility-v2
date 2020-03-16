@@ -4,4 +4,12 @@ h1, h2, h3, h4, h5, h6, p {
   padding: 0px;
   margin: 0px;
   color: $dark;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+
+* {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  &::selection {
+    background-color: rgba($secondary, 0.5);
+  }
 }

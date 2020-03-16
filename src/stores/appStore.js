@@ -1,16 +1,28 @@
 import { action, observable } from 'mobx';
 
 class AppStore {
-  @observable drawer = {
+  @observable sidebar = {
     isOpen: false
   }
 
-  @action openDrawer () {
-    this.drawer.isOpen = true
+  @action openSidebar () {
+    this.sidebar.isOpen = true
   }
 
-  @action closeDrawer () {
-    this.drawer.isOpen = false
+  @action closeSidebar () {
+    this.sidebar.isOpen = false
+  }
+
+  @observable cart = {
+    isOpen: false
+  }
+
+  @action openCart () {
+    this.cart.isOpen = true
+  }
+
+  @action closeCart () {
+    this.cart.isOpen = false
   }
 }
 

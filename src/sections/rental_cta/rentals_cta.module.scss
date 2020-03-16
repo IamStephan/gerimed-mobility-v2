@@ -1,0 +1,107 @@
+@import '../../utils/globals.scss';
+
+$breakpointOne: 850;
+$breakpointTwo: 760;
+$breakpointThree: 400;
+
+.rentals_cta_container{
+  position: relative;
+  background-color: $dark;
+
+  .rentals_cta {
+    display: flex;
+    align-items: center;
+    
+    .left {
+      padding: #{$padding}px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      flex: 1;
+
+      .title {
+        color: $light;
+        @include Title;
+        font-size: 3rem;
+      }
+
+      .content {
+        color: $light;
+        font-size: 1.25rem;
+      }
+    }
+
+    .right {
+      display: flex;
+      justify-content: flex-end;
+      padding: #{$padding}px;
+      flex: 1;
+
+      .btn-1 {
+        margin-right: 50px;
+      }
+    }
+  }
+}
+
+@media (max-width: #{$breakpointOne}px) {
+  .rentals_cta_container{
+    .rentals_cta {
+      .left {
+        .title {
+          font-size: 2.5rem;
+        }
+  
+        .content {
+          color: $light;
+          font-size: 1.25rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: #{$breakpointTwo}px) {
+  .rentals_cta_container{
+    .rentals_cta {
+      flex-direction: column;
+
+      .left {
+        .title {
+          text-align: center;
+        }
+        .content {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: #{$breakpointTwo}px) {
+  .rentals_cta_container{
+    .rentals_cta {
+      .right {
+        flex-direction: column;
+
+        .btn-1 {
+          margin-right: 0px;
+          margin-bottom: #{$margin}px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: #{$breakpointThree}px) {
+  .rentals_cta_container{
+    .rentals_cta {
+      align-items: stretch;
+    }
+  }
+}
+
+:export {
+  breakpointOne: $breakpointOne;
+  breakpointTwo: $breakpointTwo;
+  breakpointThree: $breakpointThree;
+}

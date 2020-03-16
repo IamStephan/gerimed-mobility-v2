@@ -1,0 +1,78 @@
+@import '../../utils/globals.scss';
+
+$breakpointOne: 770;
+$breakpointTwo: 580;
+
+.footer-container {
+  background-color: $dark;
+
+  .footer {
+    max-width: #{$mainClamp}px;
+    margin: auto;
+    padding: #{$padding}px;
+
+    .top {
+      display: flex;
+
+      .column {
+        flex: 1;
+        padding: #{$padding}px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: stretch;
+
+        .title {
+          color: $primary;
+          @include Title;
+          text-align: center;
+        }
+
+        .content {
+          flex: 1;
+          p {
+            color: $light;
+            text-align: center;
+          }
+        }
+      }
+    }
+
+    .seperator {
+      min-height: 1px;
+      background-color: rgba($light, 0.25);
+      margin-top: #{$margin}px;
+      margin-bottom: #{$margin}px;
+    }
+
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .right {
+        color: $primary;
+      }
+    }
+  }
+}
+
+@media (max-width: #{$breakpointOne}px) {
+  .footer-container {
+    .footer {
+      .top {
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+@media (max-width: #{$breakpointTwo}px) {
+  .footer-container {
+    .footer {
+      .bottom {
+        flex-direction: column;
+      }
+    }
+  }
+}

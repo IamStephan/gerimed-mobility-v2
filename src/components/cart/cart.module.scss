@@ -1,0 +1,77 @@
+@import '../../utils/globals.scss';
+
+.cart {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+
+  &.click-through {
+    pointer-events: none;
+  }
+
+  .dimmer {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($dark, 0.75);
+  }
+
+  .menu {
+    margin: #{$margin}px;
+    border-radius: #{$borderRadius}px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 300px;
+    height: calc(100% - #{$margin * 2}px);
+    background-color: $light;
+    padding: #{$padding}px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+
+
+    .header {
+      border-bottom: 1px solid rgba($dark, 0.25);
+      text-align: center;
+      padding-bottom: #{$padding / 2}px;
+
+      .title {
+        @include Title;
+        font-size: 1.25rem;
+      }
+    }
+
+    .content {
+      flex: 1;
+      overflow: auto;
+      margin-top: #{$margin / 2}px;
+      margin-bottom: #{$margin / 2}px;
+
+      &::-webkit-scrollbar {
+        width: 5px;
+      }
+      
+      /* Track */
+      &::-webkit-scrollbar-track {
+        background: rgba($secondary, 0.25);
+        border-radius: 99px;
+      }
+      
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        background: $secondary;
+        border-radius: 99px;
+      }
+      
+      /* Handle on hover */
+      &::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+    }
+  }
+}

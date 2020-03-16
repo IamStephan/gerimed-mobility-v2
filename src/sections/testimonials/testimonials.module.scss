@@ -1,0 +1,150 @@
+@import '../../utils/globals.scss';
+
+$breakpointOne: 1040;
+$breakpointTwo: 810;
+$breakpointThree: 560;
+
+.testimonials {
+  display: flex;
+  padding: #{$padding}px;
+  margin-bottom: #{$sectionSeperator}px;
+
+  .column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &:first-child {
+      margin-right: #{$margin}px;
+    }
+
+    &:nth-child(3) {
+      margin-left: #{$margin}px;
+    }
+
+    &:nth-child(2) {
+      margin-left: #{$margin}px;
+      margin-right: #{$margin}px;
+    }
+
+    &:nth-child(4) {
+      min-width: 100%;
+      padding: #{$padding}px;
+    }
+
+    .title {
+      font-size: 3.5rem;
+      @include Title;
+      color: $dark;
+    }
+
+    .content {
+      color: $dark;
+      font-size: 1rem;
+      padding-bottom: #{$padding}px;
+    }
+
+    .item {
+      padding: #{$padding}px;
+      background-color: $dark;
+      border-radius: #{$borderRadius}px;
+      margin-top: #{$margin}px;
+      margin-bottom: #{$margin}px;
+      clear: both;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .item-content {
+        color: $light;
+        text-align: center;
+        padding-left: #{$padding}px;
+        padding-right: #{$padding}px;
+      }
+
+      .item-name {
+        color: $light;
+        text-align: center;
+        padding-left: #{$padding}px;
+        padding-right: #{$padding}px;
+        font-weight: bolder;
+        font-size: 1.5rem;
+      }
+
+      .item-occupation {
+        color: $primary;
+        text-align: center;
+        padding-left: #{$padding}px;
+        padding-right: #{$padding}px;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: #{$breakpointOne}px) {
+  .testimonials {
+    .column {
+
+      &:nth-child(2) {
+        margin-left: 0px;
+      }
+
+      .title {
+        font-size: 2.5rem;
+        @include Title;
+        color: $dark;
+      }
+    }
+  }
+}
+
+@media (max-width: #{$breakpointTwo}px) {
+  .testimonials {
+    display: flex;
+    padding: #{$padding}px;
+    flex-wrap: wrap;
+    position: relative;
+  
+    .column {
+      flex: 1;
+      display: flex;
+      
+      flex-direction: column;
+      align-items: center;
+  
+      &:first-child {
+        margin-right: 0;
+        min-width: 100%;
+      }
+  
+      .title {
+        text-align: center;
+        width: 100%;
+      }
+  
+      .content {
+        text-align: center;
+        max-width: 400px;
+      }
+    }
+  }
+}
+
+@media (max-width: #{$breakpointThree}px) {
+  .testimonials { 
+    .column {
+      min-width: 100%;
+
+      &:nth-child(3) {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+:export {
+  breakpointOne: $breakpointOne;
+  breakpointTwo: $breakpointTwo;
+}

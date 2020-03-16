@@ -1,0 +1,123 @@
+@import '../../utils/globals.scss';
+@import '../../components/navbar/navbar.module.scss';
+
+$breakpointOne: 850;
+$breakpointTwo: 600;
+$breakpointThree: 350;
+
+.hero {
+  position: relative;
+  //margin-bottom: #{$sectionSeperator}px;
+
+  .img {
+    position: absolute;
+    top: -#{$navbarHeight}px;
+    left: 0px;
+    width: 100%;
+    height: calc(100% + #{$navbarHeight}px);
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  .hero-content {
+    display: flex;
+    align-items: center;
+
+    .left {
+      flex: 1;
+      padding: #{$padding * 1.5}px;
+      padding-top: calc(125px - #{$navbarHeight / 2.5}px);
+      padding-bottom: 125px;
+
+      .title {
+        @include Title;
+        color: $primary;
+        font-size: 4rem;
+        padding-bottom: #{$padding}px;
+      }
+
+      .content {
+        color: $light;
+        font-size: 1.25rem;
+        padding-bottom: #{$padding * 2}px;
+      }
+
+      .actions {
+        display: flex;
+        justify-content: flex-start;
+
+        .btn-1 {
+          margin-right: 75px;
+        }
+      }
+    }
+
+    .right {
+      flex: 1;
+    }
+  }
+}
+
+@media (max-width: #{$breakpointOne}px) {
+  .hero {
+    .hero-content {
+      flex-direction: column;
+  
+      .left {
+  
+        .title {
+          text-align: center;
+        }
+  
+        .content {
+          text-align: center;
+        }
+
+        .actions {
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: #{$breakpointTwo}px) {
+  .hero {
+    .hero-content {
+      flex-direction: column;
+  
+      .left {
+  
+        .title {
+          font-size: 3rem;
+        }
+  
+        .actions {
+
+          .btn-1 {
+            margin-right: 25px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: #{$breakpointThree}px) {
+  .hero {
+    .hero-content {
+      flex-direction: column;
+  
+      .left {  
+        .actions {
+          flex-direction: column;
+  
+          .btn-1 {
+            margin-bottom: 25px;
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}

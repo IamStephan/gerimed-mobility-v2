@@ -1,0 +1,173 @@
+@import '../../utils/globals.scss';
+
+$breakpointOne: 1040;
+$breakpointTwo: 810;
+$breakpointThree: 560;
+
+.specials {
+  display: flex;
+  padding: #{$padding}px;
+  margin-bottom: #{$sectionSeperator}px;
+
+  .column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    &:first-child {
+      margin-right: #{$margin}px;
+    }
+
+    &:nth-child(3) {
+      margin-left: #{$margin}px;
+    }
+
+    &:nth-child(2) {
+      margin-left: #{$margin}px;
+      margin-right: #{$margin}px;
+    }
+
+    &:nth-child(4) {
+      min-width: 100%;
+      padding: #{$padding}px;
+    }
+
+    .title {
+      font-size: 3.5rem;
+      @include Title;
+      color: $dark;
+      text-align: right;
+    }
+
+    .content {
+      color: $dark;
+      font-size: 1rem;
+      padding-bottom: #{$padding}px;
+      text-align: right;
+    }
+
+    .action {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .item {
+      padding: #{$padding}px;
+      box-shadow: 0px 0px 1px 0px $dark;
+      border-radius: #{$borderRadius}px;
+      margin-top: #{$margin}px;
+      margin-bottom: #{$margin}px;
+      clear: both;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      position: relative;
+
+      .item-img {
+        height: 200px;
+        width: auto;
+        object-fit: contain;
+      }
+
+      .item-discount {
+        position: absolute;
+        top: calc(-25px + 10px);
+        right: calc(-25px + 10px);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: $dark;
+        color: $primary;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: rotate(-25deg);
+      }
+
+      .item-name {
+        font-weight: bolder;
+        font-size: 1.25rem;
+      }
+
+      .item-prices {
+        display: flex;
+        margin-bottom: #{$margin}px;
+
+        .actual {
+          margin-right: #{$margin}px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: #{$breakpointOne}px) {
+  .specials {
+    .column {
+      &:nth-child(2) {
+        margin-left: 0px;
+      }
+
+      .title {
+        font-size: 2.5rem;
+        @include Title;
+        color: $dark;
+      }
+    }
+  }
+}
+
+@media (max-width: #{$breakpointTwo}px) {
+  .specials {
+    display: flex;
+    padding: #{$padding}px;
+    flex-wrap: wrap;
+    position: relative;
+  
+    .column {
+      flex: 1;
+      display: flex;
+      
+      flex-direction: column;
+      align-items: center;
+  
+      &:nth-child(2) {
+        margin-right: 0px;
+      }
+
+      &:nth-child(3) {
+        order: -1;
+        margin-left: 0;
+        min-width: 100%;
+      }
+  
+      .title {
+        text-align: center;
+        width: 100%;
+      }
+  
+      .content {
+        text-align: center;
+        max-width: 400px;
+      }
+    }
+  }
+}
+
+@media (max-width: #{$breakpointThree}px) {
+  .specials { 
+    .column {
+      min-width: 100%;
+
+      &:nth-child(3) {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+:export {
+  breakpointOne: $breakpointOne;
+  breakpointTwo: $breakpointTwo;
+}

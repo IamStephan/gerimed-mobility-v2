@@ -5,6 +5,10 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import loadable from 'react-loadable';
 
 import ScrollToTop from './components/scroll_to_top/scroll_to_top';
+import Navbar from './components/navbar/navbar';
+import Footer from './components/footer/footer';
+
+import Loader from './components/loader/loader';
 
 import globals from './utils/globals.scss';
 import AppStore from './stores/appStore';
@@ -26,7 +30,7 @@ const theme = createMuiTheme({
 
 const Home = loadable({
   loader: () => import('./pages/home/home'),
-  loading: () => <div>Loading...</div>,
+  loading: Loader,
 })
 
 class App extends Component {
@@ -36,6 +40,7 @@ class App extends Component {
         <StoreProvider {...stores}>
           <Router>
             <ScrollToTop />
+            <Navbar />
 
             <Switch>
               <Route path='/'>
@@ -43,7 +48,7 @@ class App extends Component {
               </Route>
             </Switch>
 
-
+            <Footer />
           </Router>
         </StoreProvider>
       </ThemeProvider>

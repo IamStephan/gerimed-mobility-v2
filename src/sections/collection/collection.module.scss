@@ -1,0 +1,79 @@
+@import '../../utils/globals.scss';
+
+$breakpointOne: 700;
+
+.collection {
+  padding: #{$padding}px;
+  display: flex;
+  margin-bottom: #{$sectionSeperator}px;
+
+  .left {
+    flex: 1;
+
+    .item {
+      margin-right: #{$margin * 2}px;
+    }
+  }
+
+  .right {
+    flex: 1;
+
+    .item {
+      margin-left: #{$margin * 2}px;
+    }
+  }
+
+  .right, .left {
+    .item {
+      position: relative;
+      padding: #{$padding}px;
+      padding-top: #{$padding * 5}px;
+      padding-bottom: #{$padding * 5}px;
+      border-radius: #{$borderRadius}px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .img {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+      }
+
+      .header {
+        @include Title;
+        color: $primary;
+        font-size: 2rem;
+      }
+
+      .content {
+        color: $primary;
+        font-size: 1.25rem;
+        padding-bottom: #{$padding}px;
+      }
+    }
+  }
+}
+
+@media (max-width: #{$breakpointOne}px) {
+  .collection {
+    flex-direction: column;
+    .left {  
+      .item {
+        margin-right: 0px;
+        margin-bottom: #{$margin}px;
+      }
+    }
+  
+    .right {
+      .item {
+        margin-left: 0px;
+      }
+    }
+  }
+}
