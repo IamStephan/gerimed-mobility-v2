@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import debounce from 'lodash/debounce';
+import throttle from 'lodash/throttle';
 import { withRouter } from 'react-router-dom';
 import { observer, inject } from 'mobx-react';
 import { Button, IconButton } from '@material-ui/core';
@@ -14,7 +15,7 @@ import styles from './navbar.module.scss';
 @withRouter
 @inject('AppStore')
 @observer
-export default class Navbar extends Component {
+export default class Navbar extends PureComponent {
   constructor(props) {
     super(props)
 
@@ -35,14 +36,14 @@ export default class Navbar extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', debounce(this.getScrollY, 100))
+    window.addEventListener('scroll', throttle(this.getScrollY, 100))
     window.addEventListener('resize', debounce(this.getWindowWidth, 100))
     this.getScrollY()
     this.getWindowWidth()
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', debounce(this.getScrollY, 100))
+    window.removeEventListener('scroll', throttle(this.getScrollY, 100))
     window.removeEventListener('resize', debounce(this.getWindowWidth, 100))
   }
 
