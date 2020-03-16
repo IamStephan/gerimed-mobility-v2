@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Spring, config } from 'react-spring/renderprops';
 import { Button } from '@material-ui/core';
 
@@ -29,7 +29,7 @@ const dummyProducts = [
   }
 ]
 
-export default class ShopFeatured extends Component {
+export default class ShopFeatured extends PureComponent {
   constructor(props) {
     super(props)
 

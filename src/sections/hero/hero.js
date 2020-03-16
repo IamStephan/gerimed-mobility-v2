@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Button } from '@material-ui/core';
 
 import { Section } from '../../components/page/page';
 
 import styles from './hero.module.scss';
 
-export default class Hero extends Component {
+export default class Hero extends PureComponent {
   render() {
     return (
       <div className={styles['hero']}>

@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import { Spring, config } from 'react-spring/renderprops';
 import { observer, inject } from 'mobx-react';
 import { Button } from '@material-ui/core';
@@ -7,7 +7,7 @@ import styles from './cart.module.scss';
 
 @inject('AppStore')
 @observer
-export default class Cart extends Component {
+export default class Cart extends PureComponent {
   constructor(props) {
     super(props)
 

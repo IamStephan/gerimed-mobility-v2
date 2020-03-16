@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Button } from '@material-ui/core';
 
 import { Section } from '../../components/page/page';
 
 import styles from './collection.module.scss';
 
-export default class Collection extends Component {
+export default class Collection extends PureComponent {
   render() {
     return (
       <Section>

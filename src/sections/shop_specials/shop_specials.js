@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Button } from '@material-ui/core';
 import debounce from 'lodash/debounce';
 
@@ -33,7 +33,7 @@ const dummyProducts = [
   }
 ]
 
-export default class ShopSpecials extends Component {
+export default class ShopSpecials extends PureComponent {
   constructor(props) {
     super(props)
 

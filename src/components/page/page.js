@@ -1,9 +1,9 @@
-import React, { Component, Fragment } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 
 import styles from './page.module.scss';
 
-export class Page extends Component {
+export class Page extends PureComponent {
   render() {
     return (
       <Fragment>
@@ -23,7 +23,7 @@ export class Page extends Component {
   }
 }
 
-export class Section extends Component {
+export class Section extends PureComponent {
   render() {
     return (
       <section className={styles['section']} {...this.props}>

@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Button } from '@material-ui/core';
 
 import styles from './footer.module.scss';
 
-export default class Footer extends Component {
+export default class Footer extends PureComponent {
   render() {
     return (
       <footer className={styles['footer-container']}>

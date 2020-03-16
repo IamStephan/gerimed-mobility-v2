@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import { withRouter } from 'react-router-dom';
 import { Spring, config } from 'react-spring/renderprops';
 import { observer, inject } from 'mobx-react';
@@ -9,7 +9,7 @@ import styles from './sidebar.module.scss';
 @withRouter
 @inject('AppStore')
 @observer
-export default class Sidebar extends Component {
+export default class Sidebar extends PureComponent {
   constructor(props) {
     super(props)
 

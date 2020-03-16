@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Button } from '@material-ui/core';
 import { VerifiedUser } from '@material-ui/icons';
 import { Spring } from 'react-spring/renderprops';
@@ -7,7 +7,7 @@ import { Section } from '../../components/page/page';
 
 import styles from './benefit.module.scss';
 
-export default class Benefit extends Component {
+export default class Benefit extends PureComponent {
   constructor(props) {
     super(props)
 
