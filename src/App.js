@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core';
 import { Provider as StoreProvider } from 'mobx-react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -33,27 +33,25 @@ const Home = loadable({
   loading: Loader,
 })
 
-class App extends Component {
-  render() {
-    return (
-      <ThemeProvider theme={theme}>
-        <StoreProvider {...stores}>
-          <Router>
-            <ScrollToTop />
-            <Navbar />
+function App() {
+  return (
+    <ThemeProvider theme={theme}>
+      <StoreProvider {...stores}>
+        <Router>
+          <ScrollToTop />
+          <Navbar />
 
-            <Switch>
-              <Route path='/'>
-                <Home />
-              </Route>
-            </Switch>
+          <Switch>
+            <Route path='/'>
+              <Home />
+            </Route>
+          </Switch>
 
-            <Footer />
-          </Router>
-        </StoreProvider>
-      </ThemeProvider>
-    )
-  }
+          <Footer />
+        </Router>
+      </StoreProvider>
+    </ThemeProvider>
+  )
 }
 
 export default App;
